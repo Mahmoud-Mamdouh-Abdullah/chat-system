@@ -5,18 +5,15 @@ services:
       dockerfile: Dockerfile
     container_name: chat-app
     ports:
-      - "8081:8081"
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/chat_app?useSSL=false
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: password
-      SPRING_RABBITMQ_HOST: rabbitmq
-      SPRING_RABBITMQ_PORT: 5672
-      ELASTICSEARCH_HOST: http://elasticsearch:9200
+      - "8080:8080"
+    restart: on-failure
     depends_on:
-      - db
-      - rabbitmq
-      - elasticsearch
+      db:
+        - condition: service_started
+      rabbitmq:
+        - condition: service_started
+      elasticsearch:
+        - condition: service_started
     networks:
       - app-network
   db:
@@ -25,7 +22,8 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: chat_app
+    volumes:
+      - mysql:/var/lib/mysql
     ports:
       - "3306:3306"
     networks:
@@ -45,6 +43,7 @@ services:
     container_name: elasticsearch
     environment:
       - discovery.type=single-node
+      - xpack.security.enabled=false
     ports:
       - "9200:9200"
       - "9300:9300"
@@ -53,3 +52,6 @@ services:
 networks:
   app-network:
     driver: bridge
+volumes:
+  mysql:
+    external: true
