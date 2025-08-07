@@ -8,12 +8,9 @@ services:
       - "8080:8080"
     restart: on-failure
     depends_on:
-      db:
-        - condition: service_started
-      rabbitmq:
-        - condition: service_started
-      elasticsearch:
-        - condition: service_started
+      - db
+      - rabbitmq
+      - elasticsearch
     networks:
       - app-network
   db:
@@ -47,6 +44,8 @@ services:
     ports:
       - "9200:9200"
       - "9300:9300"
+    volumes:
+      - elasticsearch:/usr/share/elasticsearch/data
     networks:
       - app-network
 networks:
@@ -54,4 +53,6 @@ networks:
     driver: bridge
 volumes:
   mysql:
+    external: true
+  elasticsearch:
     external: true
