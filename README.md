@@ -1,6 +1,5 @@
 # Chat App 🚀
 
-[![Build Status](https://travis-ci.org/mahmoud-mamdouh-abdullah/chat-system.svg?branch=master)](https://travis-ci.org/mahmoud-mamdouh-abdullah/chat-system)
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://semver.org)
 
 A modern and scalable chat application built using **Spring Boot**, **MySQL**, **RabbitMQ**, and *
