@@ -2,7 +2,7 @@ package com.mahmoud.chatapp.controller;
 
 import com.mahmoud.chatapp.dto.MessageQueueDTO;
 import com.mahmoud.chatapp.dto.MessageRequestDTO;
-import com.mahmoud.chatapp.service.MessageProducer;
+import com.mahmoud.chatapp.rabbitmq.MessageProducer;
 import com.mahmoud.chatapp.service.MessageService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;

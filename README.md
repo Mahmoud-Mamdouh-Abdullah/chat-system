@@ -1,9 +1,9 @@
 # Chat App 🚀
 
-[![Build Status](https://travis-ci.org/yourusername/chat-app.svg?branch=master)](https://travis-ci.org/yourusername/chat-app)
+[![Build Status](https://travis-ci.org/mahmoud-mamdouh-abdullah/chat-system.svg?branch=master)](https://travis-ci.org/mahmoud-mamdouh-abdullah/chat-system)
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://semver.org)
 
-A modern, scalable, and real-time chat application built using **Spring Boot**, **MySQL**, **RabbitMQ**, and *
+A modern and scalable chat application built using **Spring Boot**, **MySQL**, **RabbitMQ**, and *
 *Elasticsearch**. This enterprise-grade solution implements a microservices architecture, providing robust features for
 message persistence, queue-based asynchronous communication, and full-text search capabilities with high performance and
 reliability.
@@ -115,21 +115,21 @@ chat-app
 | Endpoint                  | Method | Description                         | Request Body               | Response                |
 |---------------------------|--------|-------------------------------------|---------------------------|-------------------------|
 | `/applications`           | POST   | Create a new application            | `ApplicationRequestDTO`    | `ApplicationResponse`   |
-| `/applications`           | GET    | Retrieve all applications           | N/A                       | `List<Application>`     |
-| `/applications/{token}`   | GET    | Retrieve an application by token    | N/A                       | `ApplicationResponse`   |
+| `/applications`           | GET    | Retrieve all applications           | N/A                       | `ApplicationResponseDTO`     |
+| `/applications/{token}`   | GET    | Retrieve an application by token    | N/A                       | `Application`   |
 
 #### **Chat Endpoints**
-| Endpoint                                | Method | Description                                 | Request Body | Response                  |
-|-----------------------------------------|--------|---------------------------------------------|-------------|---------------------------|
-| `/applications/{token}/chats`           | POST   | Queue a new chat creation                   | N/A         | `Map<String, String>`     |
-| `/applications/{token}/chats`           | GET    | Retrieve all chats for an application token | N/A         | `List<Chat>`              |
+| Endpoint                                | Method | Description                                 | Request Body | Response                |
+|-----------------------------------------|--------|---------------------------------------------|-------------|-------------------------|
+| `/applications/{token}/chats`           | POST   | Queue a new chat creation                   | N/A         | `Json Object`           |
+| `/applications/{token}/chats`           | GET    | Retrieve all chats for an application token | N/A         | `List<ChatResponseDTO>` |
 
 #### **Message Endpoints**
 | Endpoint                                                  | Method | Description                            | Request Body          | Response                  |
 |-----------------------------------------------------------|--------|----------------------------------------|-----------------------|---------------------------|
-| `/applications/{token}/chats/{chatNumber}/messages`        | POST   | Queue a new message for a chat         | `MessageRequestDTO`   | `Map<String, String>`     |
-| `/applications/{token}/chats/{chatNumber}/messages`        | GET    | Retrieve all messages for a chat       | N/A                   | `List<Message>`           |
-| `/applications/{token}/chats/{chatNumber}/messages/search` | GET    | Search messages in a chat by keyword   | N/A                   | `List<Message>`           |
+| `/applications/{token}/chats/{chatNumber}/messages`        | POST   | Queue a new message for a chat         | `MessageRequestDTO`   | `Json Object`     |
+| `/applications/{token}/chats/{chatNumber}/messages`        | GET    | Retrieve all messages for a chat       | N/A                   | `MessageResponseDTO`           |
+| `/applications/{token}/chats/{chatNumber}/messages/search` | GET    | Search messages in a chat by keyword   | N/A                   | `MessageDocumentResponseDTO`           |
 
 ---
 
@@ -149,7 +149,7 @@ We welcome contributions! Please fork the repository and submit a pull request f
 ### Technical Support
 
 For technical issues and bugs, please create an issue in
-our [Issue Tracker](https://github.com/yourusername/chat-app/issues).
+our [Issue Tracker](https://github.com/mahmoud-mamdouh-abdullah/chat-app/issues).
 
 ### Contact Information
 

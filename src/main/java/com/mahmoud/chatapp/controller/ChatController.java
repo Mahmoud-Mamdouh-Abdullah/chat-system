@@ -1,7 +1,7 @@
 package com.mahmoud.chatapp.controller;
 
 
-import com.mahmoud.chatapp.service.ChatProducer;
+import com.mahmoud.chatapp.rabbitmq.ChatProducer;
 import com.mahmoud.chatapp.service.ChatService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

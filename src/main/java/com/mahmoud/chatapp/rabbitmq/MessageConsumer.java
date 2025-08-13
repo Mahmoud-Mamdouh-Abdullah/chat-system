@@ -1,11 +1,11 @@
-package com.mahmoud.chatapp.service;
+package com.mahmoud.chatapp.rabbitmq;
 
 import com.mahmoud.chatapp.dto.MessageQueueDTO;
 import com.mahmoud.chatapp.entity.Chat;
 import com.mahmoud.chatapp.entity.Message;
-import com.mahmoud.chatapp.rabbitmq.RabbitMQConfig;
 import com.mahmoud.chatapp.repository.ChatRepository;
 import com.mahmoud.chatapp.repository.MessageRepository;
+import com.mahmoud.chatapp.service.ElasticSearchService;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Service;
 

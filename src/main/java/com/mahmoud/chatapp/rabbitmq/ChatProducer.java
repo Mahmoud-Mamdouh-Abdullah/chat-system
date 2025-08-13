@@ -1,6 +1,5 @@
-package com.mahmoud.chatapp.service;
+package com.mahmoud.chatapp.rabbitmq;
 
-import com.mahmoud.chatapp.rabbitmq.RabbitMQConfig;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
 

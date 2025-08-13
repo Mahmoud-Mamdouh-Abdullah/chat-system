@@ -1,8 +1,7 @@
-package com.mahmoud.chatapp.service;
+package com.mahmoud.chatapp.rabbitmq;
 
 import com.mahmoud.chatapp.entity.Application;
 import com.mahmoud.chatapp.entity.Chat;
-import com.mahmoud.chatapp.rabbitmq.RabbitMQConfig;
 import com.mahmoud.chatapp.repository.ApplicationRepository;
 import com.mahmoud.chatapp.repository.ChatRepository;
 import org.apache.coyote.BadRequestException;
